@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #E0FFFF;
+}
+
+.burger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger__button,
+.active__button {
+  position: relative;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.burger__button:hover,
+.active__button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.burger__button:hover .burger__lines {
+  width: 40px;
+}
+
+.burger__button:hover .burger__lines::before {
+  width: 65px;
+}
+
+.burger__button:hover .burger__lines::after {
+  width: 55px;
+}
+
+.burger__lines,
+.burger__lines::before,
+.burger__lines::after {
+  position: absolute;
+  height: 8px;
+  background-color: #000;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.burger__lines {
+  top: 50%;
+  left: 15%;
+  width: 65px;
+  transform: translateY(-50%);
+  
+}
+
+.burger__lines::before {
+  content: '';
+  width: 55px;
+  top: -12px;
+}
+
+.burger__lines::after {
+  content: '';
+  width: 40px;
+  top: 12px;
+}
+
+.active__button .burger__lines::before,
+.active__button .burger__lines::after {
+  width: 65px;
+  top: 0;
+}
+
+
+.active__button .burger__lines {
+  background-color: transparent;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.active__button .burger__lines::before {
+  transform: rotate(45deg);
+}
+
+.active__button .burger__lines::after {
+  transform: rotate(-45deg);
+}
+
+
